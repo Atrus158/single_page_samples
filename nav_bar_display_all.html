@@ -1,0 +1,732 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>View all the Navigation Bars</title>
+	<meta name="description" content="Navigation Bar Samples."/>
+	<style>
+		body {
+			font-family: Arial, Helvetica, Verdana, sans-serif;
+		}
+
+		/*//////////////////////////////////////////////////////////////*/
+		/*            Navigation bar formatting without colors          */
+		/*//////////////////////////////////////////////////////////////*/
+
+		div.bar {
+			width: 100%;
+			text-align: center;
+			min-width: 600px;
+			font-size: 23px;
+		}
+		div.bar ul {
+			list-style-type: none;
+			padding: 0px;
+			margin: 0px;
+		}
+		div.bar li{
+			display: inline-block;
+			vertical-align: top;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-decoration: none;
+		}
+		div ul li.start_nav{
+			border-left: none;	
+			padding: 0px;
+			height: 51px;
+		}
+		div ul li.end_nav{
+			border-right: none;
+			padding: 0px;
+			height: 51px;
+		}
+
+		/*//////////////////////////////////////////////////////////////*/
+		/*                            Blue                              */
+		/*//////////////////////////////////////////////////////////////*/
+
+		.nav_menu1 {
+			color: white;
+			background: #2a4773;							/* dark blue */
+			border-top: solid 1px #000066; 					/* darkest blue */
+			border-bottom: solid 1px #000066; 				/* darkest blue */
+		}
+		.nav_menu1 ul li {
+			border-left: solid 1px #778899;		 			 /* light slate gray */
+			border-right: solid 1px #000066; 	 			 /* darkest blue */
+		}
+		.nav_menu1 ul li a {
+			color: white;
+			background: #2a4773;							 /* dark blue */
+			text-decoration: none;
+		}
+		.nav_menu1 ul li a:hover {
+			color: #5a9aff; 								 /* light blue */
+			background: #2a4773;							 /* dark blue */
+		}
+		.nav_menu1 ul li.start_nav{
+			border-right: solid 1px #000066; 	 			/* darkest blue */
+			border-left: none;
+		}
+		.nav_menu1 ul li.end_nav{
+			border-left: solid 1px #778899;		 			/* light slate gray */
+			border-right: none;
+		}
+
+		/*//////////////////////////////////////////////////////////////*/
+		/*                            Brown                             */
+		/*//////////////////////////////////////////////////////////////*/
+
+		.nav_menu2 {
+			color: white;
+			background: rgb(156, 90, 60);					/* brown */
+			border-top: solid 1px rgb(80, 30, 30);	  		/* dark reddish brown */
+			border-bottom: solid 1px rgb(80, 30, 30);	    /* dark reddish brown */
+		}
+		.nav_menu2 ul li {
+			border-left: solid 1px rgb(236, 192, 157);		/* flesh */
+			border-right: solid 1px rgb(80, 30, 30);	    /* dark reddish brown */
+		}
+		.nav_menu2 ul li a {
+			color: white;
+			background: rgb(156, 90, 60);					/* brown */
+			text-decoration: none;
+		}
+		.nav_menu2 ul li a:hover {
+			color: rgb(236, 192, 157);						/* flesh */
+			background: rgb(156, 90, 60);					/* brown */
+		}
+		.nav_menu2 ul li.start_nav{
+			border-right: solid 1px rgb(80, 30, 30);	  	/* dark reddish brown */
+			border-left: none;
+		}
+		.nav_menu2 ul li.end_nav{
+			border-left: solid 1px rgb(236, 192, 157);		/* flesh */
+			border-right: none;
+		}
+
+		/*//////////////////////////////////////////////////////////////*/
+		/*                   Dark Blue with Yellow                      */
+		/*//////////////////////////////////////////////////////////////*/
+
+		.nav_menu3 {
+			color: white;
+			background: rgb(22,48,75);			/* dark blue */
+			border-top: solid 1px #000066; 		/* darkest blue */
+			border-bottom: solid 1px #000066; 	/* darkest blue */
+		}
+		.nav_menu3 ul li {
+			border-left: solid 1px #778899;		 /* light slate gray */
+			border-right: solid 1px #000066; 	 /* darkest blue */
+		}
+		.nav_menu3 ul li a {
+			color: white;
+			background: rgb(22,48,75);			 /* dark blue */
+			text-decoration: none;
+		}
+		.nav_menu3 ul li a:hover {
+			color: yellow; 					
+			background: rgb(22,48,75);			 /* dark blue */
+		}
+		.nav_menu3 ul li.start_nav{
+			border-right: solid 1px #000066; 	 /* darkest blue */
+			border-left: none;
+		}
+		.nav_menu3 ul li.end_nav{
+			border-left: solid 1px #778899;		 /* light slate gray */
+			border-right: none;
+		}
+
+		/*//////////////////////////////////////////////////////////////*/
+		/*                          Experiment                          */
+		/*//////////////////////////////////////////////////////////////*/
+
+		.nav_menu5 {
+			color: white;				       			
+			background: rgb(78, 20, 45);		/* purple */
+			border-top: solid 1px #9400D3;		/* dark violet */			
+			border-bottom: solid 1px #9400D3;	
+		}
+		.nav_menu5 ul li {
+			border-left: solid 1px #BC8F8F;		/* rosy brown */	 			
+			border-right: solid 1px #9400D3;	/* dark violet */	
+		}
+		.nav_menu5 ul li a {
+			color: white;
+			background: rgb(78, 20, 45);		/* purple */						
+			text-decoration: none;
+		}
+		.nav_menu5 ul li a:hover {
+			color: #99ccff;						/* light blue */
+			background: rgb(78, 20, 45);		/* purple */
+		}
+		.nav_menu5 ul li.start_nav {
+			border-right: solid 1px #9400D3;	/* dark violet */	
+			border-left: none;
+		}
+		.nav_menu5 ul li.end_nav {
+			border-left: solid 1px #BC8F8F;		/* rosy brown */			
+			border-right: none;
+		}
+
+		/*//////////////////////////////////////////////////////////////*/
+		/*                            Hitch                             */
+		/*//////////////////////////////////////////////////////////////*/
+
+		.nav_menu6 {
+			color: #6A5ACD;									/* slate blue */
+			background: #98FB98;							/* pale green */
+			border-top: solid 1px #9ACD32;					/* yellow green */
+			border-bottom: solid 1px #9ACD32;				/* yellow green */
+		}
+		.nav_menu6 ul li {
+			border-left: solid 1px #9ACD32;		 			/* yellow green */
+			border-right: solid 1px #6A5ACD;				/* slate blue */
+		}
+		.nav_menu6 ul li a {
+			color: #6A5ACD;				       				/* slate blue */
+			background: #98FB98;							/* pale green */
+			text-decoration: none;
+		}
+		.nav_menu6 ul li a:hover {
+			color: black;
+			background: #98FB98;							/* pale green */
+		}
+		.nav_menu6 ul li.start_nav {
+			border-right: solid 1px #6A5ACD;				/* slate blue */
+			border-left: none;
+		}
+		.nav_menu6 ul li.end_nav {
+			border-left: solid 1px #9ACD32;		 			/* yellow green */
+			border-right: none;
+		}
+
+		/*//////////////////////////////////////////////////////////////*/
+		/*                             Lurk                             */
+		/*//////////////////////////////////////////////////////////////*/
+
+		.nav_menu7 {
+			color: white;				       			
+			background: #BC8F8F;				/* rosy brown */					
+			border-top: solid 1px #9400D3;		/* dark violet */			
+			border-bottom: solid 1px #9400D3;	
+		}
+		.nav_menu7 ul li {
+			border-left: solid 1px #BC8F8F;		/* rosy brown */	 			
+			border-right: solid 1px #9400D3;	/* dark violet */	
+		}
+		.nav_menu7 ul li a {
+			color: white;
+			background: #BC8F8F;				/* rosy brown */					
+			text-decoration: none;
+		}
+		.nav_menu7 ul li a:hover {
+			color: #99ccff;						/* light blue */
+			background: #BC8F8F;				/* rosy brown */
+		}
+		.nav_menu7 ul li.start_nav {
+			border-right: solid 1px #9400D3;	/* dark violet */	
+			border-left: none;
+		}
+		.nav_menu7 ul li.end_nav {
+			border-left: solid 1px #BC8F8F;		/* rosy brown */			
+			border-right: none;
+		}
+
+		/*//////////////////////////////////////////////////////////////*/
+		/*                            Maroon                            */
+		/*//////////////////////////////////////////////////////////////*/
+		
+		.nav_menu8 {
+			color: white;
+			background: maroon;
+			border-top: solid 1px #B22222;  		/* dark red */
+			border-bottom: solid 1px #B22222;  	    /* dark red */
+		}
+		.nav_menu8 ul li {
+			border-left: solid 1px #BC8F8F;			/* rosy brown */
+			border-right: solid 1px #B22222;  	    /* dark red */
+		}
+		.nav_menu8 ul li a {
+			color: white;
+			background: maroon;
+			text-decoration: none;
+		}
+		.nav_menu8 ul li a:hover {
+			color:#FFEBCD;							/* rosy brown */
+			background: maroon;
+		}
+		.nav_menu8 ul li.start_nav{
+			border-right: solid 1px #B22222;  	  	/* dark red */
+			border-left: none;
+		}
+		.nav_menu8 ul li.end_nav{
+			border-left: solid 1px #BC8F8F;			/* rosy brown */
+			border-right: none;
+		}
+
+		/*//////////////////////////////////////////////////////////////*/
+		/*                            Olive                             */
+		/*//////////////////////////////////////////////////////////////*/
+		
+		.nav_menu9 {
+			color: white;
+			background: #6B8E23;							/* olive drab */
+			border-top: solid 1px rgb(0, 64, 0);			/* dark green */
+			border-bottom: solid 1px rgb(0, 64, 0);			/* dark green */
+		}
+		.nav_menu9 ul li {
+			border-left: solid 1px #BDB76B;					/* dark khaki */
+			border-right: solid 1px rgb(0, 64, 0);			/* dark green */
+		}
+		.nav_menu9 ul li a {
+			color: white;
+			background: #6B8E23;							/* olive drab*/
+			text-decoration: none;
+		}
+		.nav_menu9 ul li a:hover {
+			color: yellow;
+			background: #6B8E23;							/* olive drab */
+		}
+		.nav_menu9 ul li.start_nav{
+			border-right: solid 1px rgb(0, 64, 0);			/* dark green */
+			border-left: none;
+		}
+		.nav_menu9 ul li.end_nav{
+			border-left: solid 1px #BDB76B;					/* dark khaki */
+			border-right: none;
+		}
+
+
+		/*//////////////////////////////////////////////////////////////*/
+		/*                           Paperwork                          */
+		/*//////////////////////////////////////////////////////////////*/
+
+		.nav_menu10 {
+			color: white;
+			background: rgb(30,39,51);						/* steel blue */
+			border-top: solid 1px #000066;					/* darkest blue */
+			border-bottom: solid 1px #000066;				/* darkest blue */
+		}
+		.nav_menu10 ul li {
+			border-left: solid 1px #B0C4DE;		 			/* light steel blue */
+			border-right: solid 1px #000066;				/* darkest blue */
+		}
+		.nav_menu10 ul li a {
+			color: white;
+			background: rgb(30,39,51);						/* steel blue */
+			text-decoration: none;
+		}
+		.nav_menu10 ul li a:hover {
+			color: Paleturquoise;
+			background: rgb(30,39,51);						/* steel blue */
+		}
+		.nav_menu10 ul li.start_nav{
+			border-right: solid 1px #000066;				/* darkest blue */
+			border-left: none;
+		}
+		.nav_menu10 ul li.end_nav{
+			border-left: solid 1px #B0C4DE;		 			/* light steel blue */
+			border-right: none;
+		}
+
+		/*//////////////////////////////////////////////////////////////*/
+		/*                             Pink                             */
+		/*//////////////////////////////////////////////////////////////*/
+
+		.nav_menu11 {
+			color: #C71585;				       				/* medium violet red */
+			background: pink;												
+			border-top: solid 1px beige;					
+			border-bottom: solid 1px beige;			
+		}
+		.nav_menu11 ul li {
+			border-left: solid 1px beige;		 			
+			border-right: solid 1px #C71585;				/* medium violet red */
+		}
+		.nav_menu11 ul li a {
+			color: #C71585;				       				/* medium violet red */
+			background: pink;							
+			text-decoration: none;
+		}
+		.nav_menu11 ul li a:hover {
+			color: rgb(73,0,0);								/* dark red */
+			background: pink;
+		}
+		.nav_menu11 ul li.start_nav {
+			border-right: solid 1px  #C71585;				/* medium violet red */
+			border-left: none;
+		}
+		.nav_menu11 ul li.end_nav {
+			border-left: solid 1px beige;		 			
+			border-right: none;
+		}
+
+		/*//////////////////////////////////////////////////////////////*/
+		/*                            Purple                            */
+		/*//////////////////////////////////////////////////////////////*/
+
+		.nav_menu12 {
+			color: white;
+			background: #9089F0;							/* purplish */
+			border-top: solid 1px #000066;					/* darkest blue */
+			border-bottom: solid 1px #000066;				/* darkest blue */
+		}
+		.nav_menu12 ul li {
+			border-left: solid 1px #B0C4DE;		 			/* light steel blue */
+			border-right: solid 1px #000066;				/* darkest blue */
+		}
+		.nav_menu12 ul li a {
+			color: white;
+			background: #9089F0;							/* purplish */
+			text-decoration: none;
+		}
+		.nav_menu12 ul li a:hover {
+			color: black;
+			background: #9089F0;							/* purplish */
+		}
+		.nav_menu12 ul li.start_nav {
+			border-right: solid 1px #000066;				/* darkest blue */
+			border-left: none;
+		}
+		.nav_menu12 ul li.end_nav {
+			border-left: solid 1px #B0C4DE;		 			/* light steel blue */
+			border-right: none;
+		}
+
+		/*//////////////////////////////////////////////////////////////*/
+		/*                              Red                             */
+		/*//////////////////////////////////////////////////////////////*/
+
+		.nav_menu13 {
+			color: white;
+			background: rgb(170,5,20);					  /* dark red */		
+			border-top: solid 1px rgb(80, 30, 30);	 	  /* dark reddish brown */
+			border-bottom: solid 1px rgb(80, 30, 30);	  /* dark reddish brown */
+		}
+		.nav_menu13 ul li {
+			border-left: solid 1px rgb(230, 5, 20);	      /* light red */
+			border-right: solid 1px rgb(80, 30, 30);	  /* dark reddish brown */
+		}
+		.nav_menu13 ul li a {
+			color: white;
+			background: rgb(170,5,20);					  /* dark red */	
+			text-decoration: none;
+		}
+		.nav_menu13 ul li a:hover {
+			color: yellow;
+			background: rgb(170,5,20);					  /* dark red */	
+		}
+		.nav_menu13 ul li.start_nav{
+			border-right: solid 1px rgb(80, 30, 30);	  /* dark reddish brown */
+			border-left: none;
+		}
+		.nav_menu13 ul li.end_nav{
+			border-left: solid 1px rgb(230, 5, 20);	      /* light red */
+			border-right: none;
+		}
+
+		/*//////////////////////////////////////////////////////////////*/
+		/*                              Sea                             */
+		/*//////////////////////////////////////////////////////////////*/
+
+		.nav_menu14 {
+			color: white;
+			background: #4380D3;							/* blue */
+			border-top: solid 1px #000066;					/* darkest blue */
+			border-bottom: solid 1px #000066;				/* darkest blue */
+		}
+		.nav_menu14 ul li {
+			border-left: solid 1px #B0C4DE;		 			/* light steel blue */
+			border-right: solid 1px #000066;				/* darkest blue */
+		}
+		.nav_menu14 ul li a {
+			color: white;
+			background: #4380D3;							/* blue */
+			text-decoration: none;
+		}
+		.nav_menu14 ul li a:hover {
+			color: rgb(1,5,58);								/* dark blue */
+			background: #4380D3;							/* blue */
+		}
+		.nav_menu14 ul li.start_nav {
+			border-right: solid 1px #000066;				/* darkest blue */
+			border-left: none;
+		}
+		.nav_menu14 ul li.end_nav {
+			border-left: solid 1px #B0C4DE;		 			/* light steel blue */
+			border-right: none;
+		}
+
+		/*//////////////////////////////////////////////////////////////*/
+		/*                             Steel                            */
+		/*//////////////////////////////////////////////////////////////*/
+
+		.nav_menu15 {
+			color: #000066;							/* dark blue */				      
+			background: darkgray;						
+			border-top: solid 1px #000066;			/* dark blue */		
+			border-bottom: solid 1px #000066;		/* dark blue */
+		}
+		.nav_menu15 ul li {
+			border-left: solid 1px #99ccff;			/* light blue */	 			
+			border-right: solid 1px #000066;		/* dark blue */
+		}
+		.nav_menu15 ul li a {
+			color: #000066;							/* dark blue */
+			background: darkgray;				
+			text-decoration: none;
+		}
+		.nav_menu15 ul li a:hover {
+			color: #99ccff;							/* light blue */
+			background: darkgray;
+		}
+		.nav_menu15 ul li.start_nav {
+			border-right: solid 1px #000066;		/* dark blue */
+			border-left: none;
+		}
+		.nav_menu15 ul li.end_nav {
+			border-left: solid 1px #99ccff;			/* light blue */			
+			border-right: none;
+		}
+
+		/*//////////////////////////////////////////////////////////////*/
+		/*                           Turquoise                          */
+		/*//////////////////////////////////////////////////////////////*/
+
+	    .nav_menu16 {
+			color: azure;		       			
+			background: rgb(97,175,175);				/* lighter turquoise */
+			border-top: solid 1px rgb(30,39,51);		/* steel blue */	
+			border-bottom: solid 1px rgb(30,39,51);		/* steel blue */
+		}
+		.nav_menu16 ul li {
+			border-left: solid 1px #99ccff;				/* light blue */	 			
+			border-right: solid 1px rgb(30,39,51);		/* steel blue */
+		}
+		.nav_menu16 ul li a {
+			color: azure;						
+			background: rgb(97,175,175);				/* lighter turquoise */			
+			text-decoration: none;
+		}
+		.nav_menu16 ul li a:hover {
+			color: rgb(30,39,51);				    	/* steel blue */
+			background: rgb(97,175,175);				/* lighter turquoise */
+		}	
+		.nav_menu16 ul li.start_nav {
+			border-right: solid 1px rgb(30,39,51);		/* steel blue */
+			border-left: none;
+		}
+		.nav_menu16 ul li.end_nav {
+			border-left: solid 1px #99ccff;				/* light blue */			
+			border-right: none;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+
+	<h2>Blue</h2>
+	<div class="bar nav_menu1">
+		<ul>
+			<li class="start_nav"></li
+			><li><a href="#">Home</a></li
+			><li><a href="#">Books</a></li
+			><li><a href="#">Services</a></li
+			><li><a href="#">Games</a></li
+			><li><a href="#">Archives</a></li
+			><li class="end_nav"></li>
+		</ul>
+	</div>
+
+	<h2>Brown</h2>
+	<div class="bar nav_menu2">
+		<ul>
+			<li class="start_nav"></li
+			><li><a href="#">Home</a></li
+			><li><a href="#">Books</a></li
+			><li><a href="#">Services</a></li
+			><li><a href="#">Games</a></li
+			><li><a href="#">Archives</a></li
+			><li class="end_nav"></li>
+		</ul>
+	</div>
+	
+	<h2>Dark Blue with Yellow</h2>
+	<div class="bar nav_menu3">
+		<ul>
+			<li class="start_nav"></li
+			><li><a href="#">Home</a></li
+			><li><a href="#">Books</a></li
+			><li><a href="#">Services</a></li
+			><li><a href="#">Games</a></li
+			><li><a href="#">Archives</a></li
+			><li class="end_nav"></li>
+		</ul>
+	</div>
+
+	<h2>Exp</h2>
+	<div class="bar nav_menu5">
+		<ul>
+			<li class="start_nav"></li
+			><li><a href="#">Home</a></li
+			><li><a href="#">Books</a></li
+			><li><a href="#">Services</a></li
+			><li><a href="#">Games</a></li
+			><li><a href="#">Archives</a></li
+			><li class="end_nav"></li>
+		</ul>
+	</div>
+
+	<h2>Hitch</h2>
+	<div class="bar nav_menu6">
+		<ul>
+			<li class="start_nav"></li
+			><li><a href="#">Home</a></li
+			><li><a href="#">Books</a></li
+			><li><a href="#">Services</a></li
+			><li><a href="#">Games</a></li
+			><li><a href="#">Archives</a></li
+			><li class="end_nav"></li>
+		</ul>
+	</div>
+
+	<h2>Lurk</h2>
+	<div class="bar nav_menu7">
+		<ul>
+			<li class="start_nav"></li
+			><li><a href="#">Home</a></li
+			><li><a href="#">Books</a></li
+			><li><a href="#">Services</a></li
+			><li><a href="#">Games</a></li
+			><li><a href="#">Archives</a></li
+			><li class="end_nav"></li>
+		</ul>
+	</div>
+
+	<h2>Maroon</h2>
+	<div class="bar nav_menu8">
+		<ul>
+			<li class="start_nav"></li
+			><li><a href="#">Home</a></li
+			><li><a href="#">Books</a></li
+			><li><a href="#">Services</a></li
+			><li><a href="#">Games</a></li
+			><li><a href="#">Archives</a></li
+			><li class="end_nav"></li>
+		</ul>
+	</div>
+
+	<h2>Olive</h2>
+	<div class="bar nav_menu9">
+		<ul>
+			<li class="start_nav"></li
+			><li><a href="#">Home</a></li
+			><li><a href="#">Books</a></li
+			><li><a href="#">Services</a></li
+			><li><a href="#">Games</a></li
+			><li><a href="#">Archives</a></li
+			><li class="end_nav"></li>
+		</ul>
+	</div>
+
+	<h2>Paperwork</h2>
+	<div class="bar nav_menu10">
+		<ul>
+			<li class="start_nav"></li
+			><li><a href="#">Home</a></li
+			><li><a href="#">Books</a></li
+			><li><a href="#">Services</a></li
+			><li><a href="#">Games</a></li
+			><li><a href="#">Archives</a></li
+			><li class="end_nav"></li>
+		</ul>
+	</div>
+
+	<h2>Pink</h2>
+	<div class="bar nav_menu11">
+		<ul>
+			<li class="start_nav"></li
+			><li><a href="#">Home</a></li
+			><li><a href="#">Books</a></li
+			><li><a href="#">Services</a></li
+			><li><a href="#">Games</a></li
+			><li><a href="#">Archives</a></li
+			><li class="end_nav"></li>
+		</ul>
+	</div>
+
+	<h2>Purple</h2>
+	<div class="bar nav_menu12">
+		<ul>
+			<li class="start_nav"></li
+			><li><a href="#">Home</a></li
+			><li><a href="#">Books</a></li
+			><li><a href="#">Services</a></li
+			><li><a href="#">Games</a></li
+			><li><a href="#">Archives</a></li
+			><li class="end_nav"></li>
+		</ul>
+	</div>
+
+	<h2>Red</h2>
+	<div class="bar nav_menu13">
+		<ul>
+			<li class="start_nav"></li
+			><li><a href="#">Home</a></li
+			><li><a href="#">Books</a></li
+			><li><a href="#">Services</a></li
+			><li><a href="#">Games</a></li
+			><li><a href="#">Archives</a></li
+			><li class="end_nav"></li>
+		</ul>
+	</div>
+
+	<h2>Sea</h2>
+	<div class="bar nav_menu14">
+		<ul>
+			<li class="start_nav"></li
+			><li><a href="#">Home</a></li
+			><li><a href="#">Books</a></li
+			><li><a href="#">Services</a></li
+			><li><a href="#">Games</a></li
+			><li><a href="#">Archives</a></li
+			><li class="end_nav"></li>
+		</ul>
+	</div>
+	
+	<h2>Steel</h2>
+	<div class="bar nav_menu15">
+		<ul>
+			<li class="start_nav"></li
+			><li><a href="#">Home</a></li
+			><li><a href="#">Books</a></li
+			><li><a href="#">Services</a></li
+			><li><a href="#">Games</a></li
+			><li><a href="#">Archives</a></li
+			><li class="end_nav"></li>
+		</ul>
+	</div>
+
+	<h2>Turquoise</h2>
+	<div class="bar nav_menu16">
+		<ul>
+			<li class="start_nav"></li
+			><li><a href="#">Home</a></li
+			><li><a href="#">Books</a></li
+			><li><a href="#">Services</a></li
+			><li><a href="#">Games</a></li
+			><li><a href="#">Archives</a></li
+			><li class="end_nav"></li>
+		</ul>
+	</div>
+	<br /><br /><br /><br /><br /><br />
+
+	</div><!-- End wrapper -->
+</body>
+</html>
+
