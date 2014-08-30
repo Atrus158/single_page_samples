@@ -1,0 +1,316 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Street Craps</title>
+	<meta name="description" content="Street Craps"/>
+	<style>
+		html, body {
+			font-family: arial, helvetica, sans-serif;
+			margin: 0px;
+			padding: 0px;
+			width: 100%;
+			height: 100%;
+			background: limegreen;
+		}
+		.wrapper {
+			width: 1024px;
+			min-height: 100%;
+			height: 700px;
+			margin: 0 auto;
+			text-align: center;
+			color: white;
+			background: #2c4c6c;
+			border-left: 1px solid black;
+			border-right: 1px solid black;
+		}
+		.centered {
+			text-align: center;
+		}
+		.header {
+			margin-top: 0;
+			padding-top: 40px;
+		}
+		#dice-box {
+			text-align: center;
+			margin: 0 auto;
+			width: 284px;
+			height: 170px;
+		}
+		.dice {
+			position: relative;
+			width: 100px;
+			height: 100px;
+			border-radius: 6px;
+			border: 1px solid black;
+			background-color: red;
+			float: left;
+			margin: 20px;
+			margin-top: 40px;
+		}
+		#roll-button {
+			display: block;
+			clear: left;
+			text-align: center;
+			margin: 0 auto;
+			font-size: 15px;
+		}
+		#rules {
+			width: 340px;
+			height: 220px;
+			text-align: left;
+			margin: 0 auto;
+			margin-top: 50px;
+			border: 1px solid black;
+			border-radius: 4px;
+			color: yellow;
+			background: green;
+		}
+		.pip {
+			display: block;
+			position: absolute;
+			min-width: 16px;
+			min-height: 16px;
+			border: 1px solid black;
+			border-radius: 50%;
+			background: white;
+		}
+		.pip1 {
+			top: 17px;
+			left: 17px;
+		}
+		.pip2 {
+			top: 17px;
+			left: 67px;
+		}
+		.pip3 {
+			top: 42px;
+			left: 17px;
+		}
+		.pip4 {
+			top: 42px;
+			left: 42px;
+		}
+		.pip5 {
+			top: 42px;
+			left: 67px;
+		}
+		.pip6 {
+			top: 67px;
+			left: 17px;
+		}
+		.pip7 {
+			top: 67px;
+			left: 67px;
+		}
+		#results {
+			color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1 class="header">Street Craps</h1>
+		<div id="dice-box">
+			<div id="d1" class="dice">
+				<div id="dot1" class="pip pip1"></div>
+				<div id="dot2" class="pip pip2"></div>
+				<div id="dot3" class="pip pip3"></div>
+				<div id="dot4" class="pip pip4"></div>
+				<div id="dot5" class="pip pip5"></div>
+				<div id="dot6" class="pip pip6"></div>
+				<div id="dot7" class="pip pip7"></div>
+			</div>
+
+			<div id="d2" class="dice">
+				<div id="dot8" class="pip pip1"></div>
+				<div id="dot9" class="pip pip2"></div>
+				<div id="dot10" class="pip pip3"></div>
+				<div id="dot11" class="pip pip4"></div>
+				<div id="dot12" class="pip pip5"></div>
+				<div id="dot13" class="pip pip6"></div>
+				<div id="dot14" class="pip pip7"></div>
+			</div>
+		</div>
+		<button id="roll-button">Roll Dice</button>
+		<p id="results">Roll the dice to start a new game.</p>
+		<p id="cash-text">Cash: $50</p>
+		<div id="rules">
+			<p class="centered">Rules</p>
+			<ul>
+				<li>7 or 11 on the first roll wins.</li>
+				<li>2, 3, or 12 on the first roll loses.</li>
+				<li>Any other number becomes the &quot;point&quot;, and you continue to roll until you roll that point or you roll a 7.</li>
+				<ul>
+					<li>If you roll the point you win.</li>
+					<li>If you roll a 7 you lose.</li>
+				</ul>
+				<li>Your bet is always $1.</li>
+			</ul>
+		</div>
+
+	</div><!-- End wrapper -->
+
+	<script type="text/javascript">
+
+		var roll1 = 0, roll2 = 0, rollDie1 = 0, rollDie2 = 0, rollCounter = 0;
+		var cash = 50, bet = 1, turn = 1, point = 0;
+		var pipArray = ["dot1", "dot2", "dot3", "dot4", "dot5", "dot6", "dot7", "dot8", "dot9", "dot10", "dot11", "dot12", "dot13", "dot14"];
+		
+		var rollButton = document.getElementById("roll-button");
+		var cashText = document.getElementById("cash-text");
+		var resultText = document.getElementById("results");
+
+		function displayDice(die, roll) {
+			
+			//Hide pips.
+			if (die==1) {
+				for (a=0; a<7; a++) {
+					document.getElementById(pipArray[a]).style.visibility = "hidden";
+				}
+			}
+			if (die==2) {
+				for (a=7; a<14; a++) {
+					document.getElementById(pipArray[a]).style.visibility = "hidden";
+				}
+			}
+
+			//Reveal all corner pips for 4, 5, & 6.
+			if (die==1 && roll>3) {
+				document.getElementById('dot1').style.visibility = "visible";
+				document.getElementById('dot2').style.visibility = "visible";
+				document.getElementById('dot6').style.visibility = "visible";
+				document.getElementById('dot7').style.visibility = "visible"; 
+			}
+			if (die==2 && roll>3) {
+				document.getElementById('dot8').style.visibility = "visible";
+				document.getElementById('dot9').style.visibility = "visible";
+				document.getElementById('dot13').style.visibility = "visible";
+				document.getElementById('dot14').style.visibility = "visible"; 
+			}
+			switch(roll) {
+				case 1:
+					if (die==1) { document.getElementById('dot4').style.visibility = "visible"; }
+					if (die==2) { document.getElementById('dot11').style.visibility = "visible"; }
+					break;
+				case 2:
+					if (die==1) { 
+						document.getElementById('dot1').style.visibility = "visible";
+						document.getElementById('dot7').style.visibility = "visible"; 
+					}
+					if (die==2) { 
+						document.getElementById('dot8').style.visibility = "visible";
+						document.getElementById('dot14').style.visibility = "visible"; 
+					}
+					break;
+				case 3:
+					if (die==1) { 
+						document.getElementById('dot2').style.visibility = "visible";
+						document.getElementById('dot4').style.visibility = "visible";
+						document.getElementById('dot6').style.visibility = "visible"; 
+					}
+					if (die==2) { 
+						document.getElementById('dot9').style.visibility = "visible";
+						document.getElementById('dot11').style.visibility = "visible";
+						document.getElementById('dot13').style.visibility = "visible"; 
+					}
+					break;
+				case 5:
+					if (die==1) { document.getElementById('dot4').style.visibility = "visible"; }
+					if (die==2) { document.getElementById('dot11').style.visibility = "visible"; }
+					break;
+				case 6:
+					if (die==1) { 
+						document.getElementById('dot3').style.visibility = "visible";
+						document.getElementById('dot5').style.visibility = "visible"; 
+					}
+					if (die==2) { 
+						document.getElementById('dot10').style.visibility = "visible";
+						document.getElementById('dot12').style.visibility = "visible"; 
+					}
+					break;
+			}
+
+		}
+
+		function executeWin() {
+			resultText.innerHTML = "You won!";
+			cash = cash+bet;
+			cashText.innerHTML = "Cash: $" + cash;
+			rollButton.innerHTML = "Roll for New Game";
+			turn = 1;
+		}
+
+		function executeLose() {
+			resultText.innerHTML = "Sorry, you lost that one...";
+			cash = cash-bet;
+			cashText.innerHTML = "Cash: $" + cash;
+			rollButton.innerHTML = "Roll for New Game";
+			turn = 1;
+		}
+
+		function getResults() {
+			var totalRoll = roll1 + roll2;
+
+			if (turn==1) {
+				if (totalRoll==7 || totalRoll==11) {
+					executeWin();
+					return;
+				}
+				if (totalRoll==2 || totalRoll==3 || totalRoll==12) { 
+					executeLose();
+					return;
+				}
+				turn = 2;
+				point = totalRoll;
+				resultText.innerHTML = "The point is " + point + ".";
+				rollButton.innerHTML = "Roll for the Point";
+				return;
+			}
+
+			if (turn==2) {
+				if (totalRoll==point) { executeWin(); }
+				if (totalRoll==7) { executeLose(); }
+			}
+
+			if (cash==0) {
+				resultText.innerHTML = "You are out of cash.  Click the button to start a new game.";
+				rollButton.innerHTML = "Start New Game";
+			}
+		}
+
+		function rollDice() {
+			roll1 = Math.floor(Math.random()* 6 + 1);
+			roll2 = Math.floor(Math.random()* 6 + 1);
+			displayDice(1,roll1);
+			displayDice(2,roll2);
+			rollCounter++;
+			if (rollCounter>=20) {
+				clearInterval(rollDie1);
+				clearInterval(rollDie2);
+				rollCounter = 0;
+				rollButton.disabled=false;
+				getResults();
+			}
+		}
+
+		rollDice();
+
+		function rollDiceMultiple() {
+			if (cash==0) {
+				cash=50;
+				cashText.innerHTML = "Cash: $50";
+				rollButton.innerHTML = "Roll Dice";
+				resultText.innerHTML = "&nbsp;";
+				return;
+			}
+			rollButton.disabled=true;
+			rollDie1 = setInterval(rollDice,50);
+			rollDie2 = setInterval(rollDice,50);
+		}
+
+		rollButton.addEventListener("click", rollDiceMultiple);
+
+	</script>
+</body>
+</html>
