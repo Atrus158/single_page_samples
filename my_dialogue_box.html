@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Dialog Box Sample</title>
+	<meta name="description" content="Demo of a dialog box."/>
+	<style>
+	/* Note: Change the margins for the background area of the dialog box in .boxTitle and .boxContent. */
+	html, body, .wrapper{
+		width: 100%;
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+		font-family: Arial, Helvetica, sans-serif;
+	} 
+	.wrapper {
+		position: relative;
+		background-color: azure;
+	}
+	h3 {
+		text-align: center;
+		margin: 0 auto;
+	}
+	#dialogBox {
+		width: 400px;
+	}
+	.dialog {
+		position: absolute;
+		top: 100px;
+		left: 400px;
+	    border: 1px solid black;
+	    border-radius: 5px;
+	    background: rgb(150,150,150);
+	    font-size: 14px;
+	    font-weight: normal;
+	}
+	.btn {
+		font-size: 14px;
+		font-weight: bold;
+		border: 1px solid black;
+		border-radius: 3px;
+	}
+	#toggleBtn {
+		position: absolute;
+		top: 50px;
+		left: 540px;
+	}
+	#okayBtn {
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+	}
+	.boxTitle {
+	    text-align: center;
+	    margin: 2px;
+	    height: 18px;
+		border: 1px solid black;
+		border-radius: 4px;
+		color: white;
+		background-color: black;
+	}
+	.boxTitle span {
+	    font-weight: bold;
+	    color:  white;
+	    text-align: center;
+	    margin: 0 auto;
+	}
+	.closeBox {
+		margin: 1px 1px 0px 0px;
+		float: right;
+		width: 16px;
+		height: 16px;
+	}
+	.contentTitle {
+		font-size: 16px;
+		font-weight: bold;
+		text-align: center;
+		margin: 0 auto;
+	}
+	.boxContent {
+		font-size: 14px;
+		font-weight: normal;
+		margin: 2px;
+		padding: 8px; 
+		border: 1px solid black;
+		border-radius: 4px;
+		background: #FFFAF0;
+	}
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script><!-- jQuery UI -->
+
+
+</head>
+<body>
+	<div class="wrapper">
+
+		<button id="toggleBtn" class="btn">Close Dialog</button>
+
+		<div id="dialogBox" class="dialog ui-widget-content">
+			<div class="boxTitle">
+                <span>Test Dialog Box</span>
+                <div class="closeBox">
+                	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+	                	<g id="Layer_1_copy_5">
+							<path fill="#F2F2F2" stroke="#000000" stroke-miterlimit="10" d="M15.5,14.5c0,0.5-0.4,1-1,1H1.5c-0.5,0-1-0.4-1-1V1.5
+								c0-0.5,0.4-1,1-1h13.1c0.5,0,1,0.4,1,1V14.5z"/>
+							<line stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="3.2" y1="12.8" x2="12.8" y2="3.2"/>
+							
+								<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="3.2" y1="3.2" x2="12.8" y2="12.8"/>
+						</g>
+					</svg>
+                </div>
+            </div>
+            <div class="boxContent">
+            	<h3>Testing 1, 2, 3...</h3>
+            	<p>This is a test of my custom-made dialog box. I use jQuery to show it, hide it, and make it draggable, 
+            		but the rest is plain old HTML and CSS that I had a really great time programming, because I like to do really simple straightforward things and then talk about them a lot like I'm doing right here. Don't get me wrong, I also like to program complex applications, but there is something irresistibly attractive about the beauty and elegance of simplicity. Also, by the way, who needs Lorem Ipsum when one can blather on endlessly like me?  I mean, really, who needs it? Do you? I don't. I can just keep typing... Did you think I was going to stop right there? I didn't, did I? Nope. Now I'm doing to stop. Ha ha! Fake out. I waited until now to stop.
+            	</p>
+            	<button id="okayBtn" class="btn">OK</button>
+	    	</div>
+		</div><!-- End dialog box -->
+
+	</div><!-- End wrapper -->
+
+	<script>
+	$("document").ready( function () {
+		
+		var dialogToggle = "shown";
+
+	 	// Make  dialog box draggable.
+  		$(".dialog").draggable();
+
+  		function hideDialog() {
+  			$("#dialogBox").hide();
+  			dialogToggle = "hidden";
+  			$("#toggleBtn").html("Show Dialog");
+  		}
+
+  		function showDialog() {
+  			$("#dialogBox").show();
+	  		dialogToggle = "shown";
+	  		$("#toggleBtn").html("Hide Dialog");
+  		}
+
+  		$(".closeBox").on("click", function() { hideDialog(); });
+
+  		$("#okayBtn").on("click", function() { hideDialog(); });
+
+  		$("#toggleBtn").on("click", function() { 
+  			if (dialogToggle === "shown") { hideDialog(); } else { showDialog(); }
+  		});
+
+  	});
+	</script>
+
+</body>
+</html>
+
+
+
